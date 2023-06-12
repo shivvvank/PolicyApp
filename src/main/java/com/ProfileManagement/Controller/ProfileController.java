@@ -29,8 +29,12 @@ public class ProfileController{
     public String AddProfile(@RequestBody User user)
     {
         String result="";
+        if(user==null)
+        {
+            return "IDK"+" "+user.getFirstname()+" "+user.getDateOfBirth();
+        }
         profileService.AddProfile(user);
-        if(profileService.FindUser(user.getUsername()))
+        if(user.getUsername()!=null && profileService.FindUser(user.getUsername()))
         {
             result = "Status:OK";
             result+=" Username:"+user.getUsername();

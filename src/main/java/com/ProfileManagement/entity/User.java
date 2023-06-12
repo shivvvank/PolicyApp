@@ -12,149 +12,133 @@ import java.util.Date;
 public class User {
     @Id
     @Column(name="Username")
-    private String Username;
+    private String username;
     @Column(name="Firstname")
-    private String FirstName;
+    private String firstname;
     @Column(name="Middlename")
-    private String Middlename;
+    private String middlename;
     @Column(name="Lastname")
-    private String Lastname;
+    private String lastname;
     @Column(name="DateOfBirth")
-    private Date DateOfBirth;
+    private Date dateOfBirth;
     @Column(name="Gender")
-    private char Gender;
+    private String gender;
     @Column(name="Profession")
-    private String Profession;
+    private String profession;
     @Column(name="CurrentAddress")
-    private String CurrentAddress;
+    private String currentAddress;
     @Column(name="Nationality")
-    private String Nationality;
+    private String nationality;
     @Column(name="IDProofType")
-    private String IDProofType;
+    private String idProofType;
     @Column(name="IDProofDocNumber")
-    private String IDProofDocNumber;
+    private String idProofDocNumber;
     @Column(name="PhoneNumber")
-    private String PhoneNumber;
+    private String phoneNumber;
     @Column(name="EmailAddress")
-    private String EmailAddress;
+    private String emailAddress;
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
-    public String getFirstName() {
-        return FirstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
     public String getMiddlename() {
-        return Middlename;
+        return middlename;
     }
 
     public void setMiddlename(String middlename) {
-        Middlename = middlename;
+        this.middlename = middlename;
     }
 
     public String getLastname() {
-        return Lastname;
+        return lastname;
     }
 
     public void setLastname(String lastname) {
-        Lastname = lastname;
+        this.lastname = lastname;
     }
 
     public Date getDateOfBirth() {
-        return DateOfBirth;
+        return dateOfBirth;
     }
 
     public void setDateOfBirth(Date dateOfBirth) {
-        DateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public char getGender() {
-        return Gender;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGender(char gender) {
-        Gender = gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getProfession() {
-        return Profession;
+        return profession;
     }
 
     public void setProfession(String profession) {
-        Profession = profession;
+        this.profession = profession;
     }
 
     public String getCurrentAddress() {
-        return CurrentAddress;
+        return currentAddress;
     }
 
     public void setCurrentAddress(String currentAddress) {
-        CurrentAddress = currentAddress;
+        this.currentAddress = currentAddress;
     }
 
     public String getNationality() {
-        return Nationality;
+        return nationality;
     }
 
     public void setNationality(String nationality) {
-        Nationality = nationality;
+        this.nationality = nationality;
     }
 
-    public String getIDProofType() {
-        return IDProofType;
+    public String getIdProofType() {
+        return idProofType;
     }
 
-    public void setIDProofType(String IDProofType) {
-        this.IDProofType = IDProofType;
+    public void setIdProofType(String IDProofType) {
+        this.idProofType = IDProofType;
     }
 
-    public String getIDProofDocNumber() {
-        return IDProofDocNumber;
+    public String getIdProofDocNumber() {
+        return idProofDocNumber;
     }
 
-    public void setIDProofDocNumber(String IDProofDocNumber) {
-        this.IDProofDocNumber = IDProofDocNumber;
+    public void setIdProofDocNumber(String IDProofDocNumber) {
+        this.idProofDocNumber = IDProofDocNumber;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmailAddress() {
-        return EmailAddress;
+        return emailAddress;
     }
 
     public void setEmailAddress(String emailAddress) {
-        EmailAddress = emailAddress;
-    }
-
-    public User(String username, String firstName, String middlename, String lastname, Date dateOfBirth, char gender, String profession, String currentAddress, String nationality, String IDProofType, String IDProofDocNumber, String phoneNumber, String emailAddress) {
-        Username = username;
-        FirstName = firstName;
-        Middlename = middlename;
-        Lastname = lastname;
-        DateOfBirth = dateOfBirth;
-        Gender = gender;
-        Profession = profession;
-        CurrentAddress = currentAddress;
-        Nationality = nationality;
-        this.IDProofType = IDProofType;
-        this.IDProofDocNumber = IDProofDocNumber;
-        PhoneNumber = phoneNumber;
-        EmailAddress = emailAddress;
+        this.emailAddress = emailAddress;
     }
 }
