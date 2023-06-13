@@ -42,13 +42,10 @@ public class UserDAOImp implements UserDAO {
     }
 
     @Override
-    public void AddNominee(User user, Nominee nominee) {
-        if (user.getUsername().equals(nominee.getUsername())) {
+    @Transactional
+    public void AddNominee(String username, Nominee nominee) {
+        if (username.equals(nominee.getUsername())) {
             entityManager.persist(nominee);
-        }
-        else
-        {
-            System.out.println("Cannot add Nominee");
         }
     }
 
@@ -64,9 +61,9 @@ public class UserDAOImp implements UserDAO {
         entityManager.remove(nominee);
     }
     @Override
-    public Boolean FindUser(String username)
+    public User FindUser(String username)
     {
         User u = entityManager.find(User.class,username);
-        return (u!=null);
+        return u;
     }
 }

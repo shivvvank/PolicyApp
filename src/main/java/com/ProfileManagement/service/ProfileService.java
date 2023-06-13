@@ -9,8 +9,8 @@ import java.util.List;
 public interface ProfileService {
     List<NomineeRelation> getNomineeRelations();
     void AddProfile(User user);
-    void AddNominee(User user, Nominee nominee);
+    void AddNominee(String username, Nominee nominee);
     Nominee GetNominee(String username);
     void RemoveNominee(String username);
-    Boolean FindUser(String username);
+    User FindUser(String username);
 }

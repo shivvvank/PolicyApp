@@ -29,25 +29,28 @@ public class ProfileController{
     public String AddProfile(@RequestBody User user)
     {
         String result="";
-        if(user==null)
-        {
-            return "IDK"+" "+user.getFirstname()+" "+user.getDateOfBirth();
-        }
         profileService.AddProfile(user);
-        if(user.getUsername()!=null && profileService.FindUser(user.getUsername()))
+        if(user.getUsername()!=null && profileService.FindUser(user.getUsername())!=null)
         {
-            result = "Status:OK";
-            result+=" Username:"+user.getUsername();
-        }
-        else
-        {
-            result = "Status 404: Failed to add profile";
+            result+="Added Profile with username:"+user.getUsername();
         }
         return result;
     }
-    @PostMapping("/profile/{Username}/Nominee")
-    public String AddNominee(@PathVariable String Username,Nominee nominee)
+    @PostMapping("/profile/{username}/nominee")
+    public String AddNominee(@PathVariable String username,@RequestBody Nominee nominee)
     {
-        return null;
+        if(username == null || profileService.FindUser(username)==null)
+        {
+            return "Could Not Find the User with username : "+username+" !";
+        }
+        if(nominee.getUsername()==null) {
+            nominee.setUsername(username);
+        }
+        profileService.AddNominee(username,nominee);
+        Nominee n = profileService.GetNominee(username);
+        if(n!=null) {
+            return "Added nominee with ID "+n.getID()+" to user "+username+" !";
+        }
+        return "Sorry! Nominee Could not be added !";
     }
 }

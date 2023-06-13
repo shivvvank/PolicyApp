@@ -8,9 +8,9 @@ import java.util.List;
 public interface UserDAO {
     List<NomineeRelation> GetNomineeRelations();
     void AddProfile(User user);
-    void AddNominee(User user, Nominee nominee);
+    void AddNominee(String username, Nominee nominee);
     Nominee GetNominee(String username);
     void RemoveNominee(String username);
     NomineeRelation test(int id);
-    Boolean FindUser(String username);
+    User FindUser(String username);
 }

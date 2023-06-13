@@ -31,8 +31,8 @@ public class ProfileServiceImp implements ProfileService{
     }
 
     @Override
-    public void AddNominee(User user, Nominee nominee) {
-        userDAO.AddNominee(user,nominee);
+    public void AddNominee(String username, Nominee nominee) {
+        userDAO.AddNominee(username,nominee);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ProfileServiceImp implements ProfileService{
         userDAO.RemoveNominee(username);
     }
     @Override
-    public Boolean FindUser(String username)
+    public User FindUser(String username)
     {
         return userDAO.FindUser(username);
     }
